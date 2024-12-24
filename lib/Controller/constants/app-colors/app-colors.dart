@@ -10,6 +10,4 @@ class AppColors{
  static Color blackColor=Colors.black;
 
 
-
-
 }
