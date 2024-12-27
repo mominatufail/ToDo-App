@@ -23,7 +23,10 @@ class SignupView extends StatelessWidget {
         TextFormFieldWidget(hintText: 'Create a Password', controller:fullNameController),
         TextFormFieldWidget(hintText: 'Confirm your Password', controller:fullNameController),
          SizedBox(height: 10,),
-        ButtonWidget(text: 'SignUp', ontap: (){}),
+        ButtonWidget(text: 'SignUp', ontap: ()async{
+          await Firebase
+
+        }),
         SizedBox(height: 10,),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
