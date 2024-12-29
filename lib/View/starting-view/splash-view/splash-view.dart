@@ -7,6 +7,8 @@ import 'package:architecture/View/auth-view/signup-view/signup-view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../Controller/constants/app-loader/app-loader.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -41,6 +43,11 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 30,),
             CircularProgressIndicator(//backgroundColor: AppColors.primaryColor,
               color: AppColors.secondaryColor ,),
+
+            AppLoader(), //call this widget for loading effect
+
+            //SpinKitCircle(color: AppColors.primaryColor),
+
             //Padding(
               //padding: const EdgeInsets.all(8.0),
               //child: BlackTextHeading(text:'Lorem ipsum dolor sit amet,consectetur adipisicing. Maxime,tempore! Animi nemo aut atque,deleniti nihil dolorem repellendus.'),
