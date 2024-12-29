@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 class SignupView extends StatelessWidget {
   SignupView({super.key});
   TextEditingController fullNameController= TextEditingController();
+  TextEditingController emailController= TextEditingController();
+  TextEditingController passwordController= TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +20,12 @@ class SignupView extends StatelessWidget {
         BlackTextHeading(text: 'Welcome Onboard!'),
         SizedBox(height: 20,),
         NormalTextWidget(text: 'Let’s help you meet up your task',textColor: AppColors.primaryColor,),
-        TextFormFieldWidget(hintText: 'Enter your Full Name', controller:fullNameController),
-        TextFormFieldWidget(hintText: 'Enter your Email address ', controller:fullNameController),
-        TextFormFieldWidget(hintText: 'Create a Password', controller:fullNameController),
-        TextFormFieldWidget(hintText: 'Confirm your Password', controller:fullNameController),
+        //TextFormFieldWidget(hintText: 'Enter your Full Name', controller:fullNameController),
+        TextFormFieldWidget(hintText: 'Enter your Email address ', controller:emailController),
+        TextFormFieldWidget(hintText: 'Create a Password', controller:passwordController),
+        //TextFormFieldWidget(hintText: 'Confirm your Password', controller:fullNameController),
          SizedBox(height: 10,),
+
         ButtonWidget(text: 'SignUp', ontap: ()async{
           //await Firebase
 
