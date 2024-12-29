@@ -41,10 +41,13 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 30,),
             BlackTextHeading(text:'Get things done with TODo'),
             SizedBox(height: 30,),
-            CircularProgressIndicator(//backgroundColor: AppColors.primaryColor,
-              color: AppColors.secondaryColor ,),
+            //CircularProgressIndicator(//backgroundColor: AppColors.primaryColor,
+             // color: AppColors.secondaryColor ,),
 
-            AppLoader(), //call this widget for loading effect
+            AppLoader(),  //call this widget for loading effect
+            SizedBox(height: 15,),
+
+
 
             //SpinKitCircle(color: AppColors.primaryColor),
 

@@ -1,9 +1,19 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'View/starting-view/splash-view/splash-view.dart';
 import 'container.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp();  used for android
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,);
+  //above one is used for website
+
+
   runApp(const MyApp());
 }
 
