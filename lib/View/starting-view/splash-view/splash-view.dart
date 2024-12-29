@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
             BlackTextHeading(text:'Get things done with TODo'),
             SizedBox(height: 30,),
             CircularProgressIndicator(//backgroundColor: AppColors.primaryColor,
-              color: AppColors.primaryColor ,),
+              color: AppColors.secondaryColor ,),
             //Padding(
               //padding: const EdgeInsets.all(8.0),
               //child: BlackTextHeading(text:'Lorem ipsum dolor sit amet,consectetur adipisicing. Maxime,tempore! Animi nemo aut atque,deleniti nihil dolorem repellendus.'),
