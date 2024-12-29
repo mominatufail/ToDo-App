@@ -4,6 +4,7 @@ import 'package:architecture/Controller/widgets/button-widget.dart';
 import 'package:architecture/Controller/widgets/image-widget.dart';
 import 'package:architecture/Controller/widgets/normal-text-widget.dart';
 import 'package:architecture/Controller/widgets/textformfield-widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignupView extends StatelessWidget {
@@ -27,7 +28,11 @@ class SignupView extends StatelessWidget {
          SizedBox(height: 10,),
 
         ButtonWidget(text: 'SignUp', ontap: ()async{
-          //await Firebase
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+              email: emailController.text.trim(),
+              password: passwordController.text);
+
+          
 
         }),
         SizedBox(height: 10,),
