@@ -31,6 +31,16 @@ class ContainerClass extends StatelessWidget {
         borderRadius: BorderRadius.only(
       topRight: Radius.circular(200), bottomRight: Radius.circular(200)),
         ),),
+          Padding(padding: const EdgeInsets.only(left: 18.0, top: 20, right: 18),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell()
+    ],
+
+
+    )
+
 
 
       ],)

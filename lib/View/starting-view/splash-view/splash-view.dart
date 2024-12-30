@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../Controller/constants/app-loader/app-loader.dart';
+import '../../../container.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,16 +19,34 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   //initial state function
-  // @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Future.delayed(Duration(seconds: 3),(){
-  //     Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupView()));
-  //
-  //   });
-  // }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(seconds: 3),()async {
+
+    });
+  }
+
+  islogedin()async
+  {
+  User? check= await FirebaseAuth.instance.currentUser;
+
+  if(check==null)
+  {
+  Navigator.push(context,
+  MaterialPageRoute(builder: (context)=>SignupView()));
+  }
+  else
+  {
+  Navigator.push(context,
+  MaterialPageRoute(builder: (context)=>ContainerClass()));
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,8 +67,6 @@ class _SplashScreenState extends State<SplashScreen> {
             AppLoader(),  //call this widget for loading effect
             SizedBox(height: 15,),
 
-
-
             //SpinKitCircle(color: AppColors.primaryColor),
 
             //Padding(
@@ -59,9 +76,21 @@ class _SplashScreenState extends State<SplashScreen> {
 
             ButtonWidget(text: 'Get Started',
                 ontap: () async {
-              await FirebaseAuth.instance.currentUser;
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=>SignupView()));
+              User? check= await FirebaseAuth.instance.currentUser;
+
+              if(check==null)
+                {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>SignupView()));
+                }
+              else
+                {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=>ContainerClass()));
+
+
+                }
+
             }),
 
 
