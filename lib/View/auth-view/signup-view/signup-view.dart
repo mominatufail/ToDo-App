@@ -57,13 +57,14 @@ class _SignupViewState extends State<SignupView> {
                     builder: (context) => LoginView()));
                 
 
-              });
+              }).onError((value,error){
+                isloading = false;
+                setState(() {});
+
+                });
 
 
-              }
-
-
-        ),
+              }),
 
         SizedBox(height: 10,),
 

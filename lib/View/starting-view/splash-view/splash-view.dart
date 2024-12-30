@@ -4,6 +4,7 @@ import 'package:architecture/Controller/widgets/blacktext-heading-widget.dart';
 import 'package:architecture/Controller/widgets/button-widget.dart';
 import 'package:architecture/Controller/widgets/image-widget.dart';
 import 'package:architecture/View/auth-view/signup-view/signup-view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,8 +57,11 @@ class _SplashScreenState extends State<SplashScreen> {
               //child: BlackTextHeading(text:'Lorem ipsum dolor sit amet,consectetur adipisicing. Maxime,tempore! Animi nemo aut atque,deleniti nihil dolorem repellendus.'),
             //),
 
-            ButtonWidget(text: 'Get Started', ontap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupView()));
+            ButtonWidget(text: 'Get Started',
+                ontap: () async {
+              await FirebaseAuth.instance.currentUser;
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>SignupView()));
             }),
 
 
