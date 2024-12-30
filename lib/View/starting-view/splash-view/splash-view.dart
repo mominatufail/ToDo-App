@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   //initial state function
 
   @override
-  void initState() {
+  void initState() {    //cant use async in initstate
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3),()async {

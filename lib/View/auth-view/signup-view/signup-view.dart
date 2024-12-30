@@ -47,24 +47,21 @@ class _SignupViewState extends State<SignupView> {
               setState(() {});
 
 
-          await FirebaseAuth.instance.
-          createUserWithEmailAndPassword(
-              email: emailController.text.trim(),
-              password: passwordController.text).then((value) {
+              await FirebaseAuth.instance.
+              createUserWithEmailAndPassword(
+                  email: emailController.text.trim(),
+                  password: passwordController.text).then((value) {
                 isloading = false;
                 setState(() {});
                 Navigator.push(context, CupertinoPageRoute(
                     builder: (context) => LoginView()));
-                
-
-              }).onError((value,error){
+              }).onError((value, error) {
                 isloading = false;
                 setState(() {});
+              });
 
-                });
 
-
-              }),
+            }),
 
         SizedBox(height: 10,),
 
