@@ -59,7 +59,9 @@ class _SignupViewState extends State<SignupView> {
               }).onError((value, error) {
                 isloading = false;
                 setState(() {});
-                Get.snackbar('Error',error.toString());
+                Get.snackbar('Error','${value.toString()}',
+                backgroundColor: AppColors.primaryColor);
+
               });
 
 
