@@ -9,6 +9,7 @@ import 'package:architecture/View/auth-view/signin-view/signin-view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignupView extends StatefulWidget {
   SignupView({super.key});
@@ -58,6 +59,7 @@ class _SignupViewState extends State<SignupView> {
               }).onError((value, error) {
                 isloading = false;
                 setState(() {});
+                Get.snackbar('Error',error.toString());
               });
 
 
