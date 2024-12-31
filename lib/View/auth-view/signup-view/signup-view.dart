@@ -67,7 +67,7 @@ class _SignupViewState extends State<SignupView> {
 
             }),
 
-        SizedBox(height: 10,),
+        SizedBox(height: 10),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
