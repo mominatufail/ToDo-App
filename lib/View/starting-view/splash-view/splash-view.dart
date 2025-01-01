@@ -20,6 +20,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
+
   //initial state function
 
   @override
@@ -33,18 +34,16 @@ class _SplashScreenState extends State<SplashScreen> {
 
   islogedin()async
   {
-  User? check= await FirebaseAuth.instance.currentUser;
+    User? check = await FirebaseAuth.instance.currentUser;
 
-  if(check==null)
-  {
-  Navigator.push(context,
-  MaterialPageRoute(builder: (context)=>SignupView()));
-  }
-  else
-  {
-  Navigator.push(context,
-  MaterialPageRoute(builder: (context)=>ContainerClass()));
-
+    if (check == null) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => SignupView()));
+    }
+    else {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => ContainerClass()));
+    }
   }
 
   @override
