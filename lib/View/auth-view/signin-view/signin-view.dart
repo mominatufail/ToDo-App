@@ -1,5 +1,6 @@
 import 'package:architecture/Controller/constants/app-loader/app-loader.dart';
 import 'package:architecture/Controller/widgets/button-widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
  class LoginView extends StatefulWidget {
@@ -31,9 +32,8 @@ import 'package:flutter/material.dart';
              isLoading = true;
              setState(() {
 
-             });
-             await 
-
+             });FirebaseAuth.instance.signInWithEmailAndPassword(
+                 email: emailController, password: password)
 
            })
 
