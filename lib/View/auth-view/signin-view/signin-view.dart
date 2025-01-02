@@ -35,7 +35,7 @@ import 'package:get/get_utils/get_utils.dart';
 
              });FirebaseAuth.instance.signInWithEmailAndPassword(
                  email: emailController.text.trim(),
-                 password: passwordController.text).then(onValue);
+                 password: passwordController.text).then((onValue) {});
            })
 
        ],),
