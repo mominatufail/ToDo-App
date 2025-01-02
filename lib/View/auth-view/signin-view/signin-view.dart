@@ -2,6 +2,7 @@ import 'package:architecture/Controller/constants/app-loader/app-loader.dart';
 import 'package:architecture/Controller/widgets/button-widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 
  class LoginView extends StatefulWidget {
    const LoginView({super.key});
@@ -33,8 +34,8 @@ import 'package:flutter/material.dart';
              setState(() {
 
              });FirebaseAuth.instance.signInWithEmailAndPassword(
-                 email: emailController, password: password)
-
+                 email: emailController.text.trim(),
+                 password: passwordController.text).then(onValue);
            })
 
        ],),
