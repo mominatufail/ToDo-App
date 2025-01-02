@@ -27,7 +27,15 @@ import 'package:flutter/material.dart';
          controller: passwordController,
          obscureText: true),
            isLoading?AppLoader():
-           ButtonWidget(text: 'Login', ontap:(){})
+           ButtonWidget(text: 'Login', ontap:() async{
+             isLoading = true;
+             setState(() {
+
+             });
+             await 
+
+
+           })
 
        ],),
 
