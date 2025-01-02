@@ -1,3 +1,5 @@
+import 'package:architecture/Controller/constants/app-loader/app-loader.dart';
+import 'package:architecture/Controller/widgets/button-widget.dart';
 import 'package:flutter/material.dart';
 
  class LoginView extends StatefulWidget {
@@ -24,10 +26,14 @@ import 'package:flutter/material.dart';
        TextFormField(
          controller: passwordController,
          obscureText: true),
+           isLoading?AppLoader():
+
+
+           ButtonWidget(text: 'Login', ontap:(){})
 
        ],),
 
      );
-     
+
    }
  }
