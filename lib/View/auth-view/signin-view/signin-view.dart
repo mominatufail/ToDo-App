@@ -18,8 +18,13 @@ import 'package:flutter/material.dart';
        body: Column(
          children: [
            TextFormField(
-             controller: emailController),
-       SizedBox(height: 16,)
+             controller: emailController
+       ),
+       SizedBox(height: 16,),
+       TextFormField(
+         controller: passwordController,
+         
+       )
 
 
            )
