@@ -23,15 +23,11 @@ import 'package:flutter/material.dart';
        SizedBox(height: 16,),
        TextFormField(
          controller: passwordController,
-         
-       )
+         obscureText: true),
 
-
-           )
-
-         ],
-       ),
+       ],),
 
      );
+     
    }
  }
