@@ -1,6 +1,8 @@
 import 'package:architecture/Controller/constants/app-loader/app-loader.dart';
 import 'package:architecture/Controller/widgets/button-widget.dart';
+import 'package:architecture/container.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
 
@@ -35,8 +37,13 @@ import 'package:get/get_utils/get_utils.dart';
 
              });FirebaseAuth.instance.signInWithEmailAndPassword(
                  email: emailController.text.trim(),
-                 password: passwordController.text).then((onValue) {});
-           })
+                 password: passwordController.text).then((onValue) {
+     Navigator.pushReplacement(
+     context, CupertinoPageRoute(
+     builder: (context)=>ContainerClass()));
+     }).onError((value,error) {});
+
+             })
 
        ],),
 
