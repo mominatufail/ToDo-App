@@ -27,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {    //cant use async in initstate
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3),()async {
+    Future.delayed(Duration(seconds: 3),() {
+      islogedin();
 
     });
   }
@@ -35,12 +36,13 @@ class _SplashScreenState extends State<SplashScreen> {
   islogedin()async
   {
     User? check = await FirebaseAuth.instance.currentUser;
-
-    if (check == null) {
+    if (check == null)
+    {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => SignupView()));
     }
-    else {
+    else
+    {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => ContainerClass()));
     }
@@ -86,7 +88,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context)=>ContainerClass()));
-
 
                 }
 

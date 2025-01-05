@@ -7,46 +7,33 @@ class ContainerClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-      Column(children: [
-      Container(
-      height: 400, width: double.infinity,
-        color: AppColors.primaryColor,
-      )
-      ],),
-        Container(
-          height: 100, width: 200,
-          decoration: BoxDecoration(color: Colors.blue,//.opacity(0.5),
-            borderRadius: BorderRadius.only(
-                //topRight: Radius.circular(100),// if we do 200 it will become lemon or leaf type
-              bottomLeft: Radius.circular(100),
-              bottomRight: Radius.circular(10),))
-               //topLeft: Radius.circular(10)
-      ),
-       Container(
-        height: 100,
-        width: 200,
-        decoration: BoxDecoration( color: Colors.blue.withOpacity(0.5),
-        borderRadius: BorderRadius.only(
-      topRight: Radius.circular(200), bottomRight: Radius.circular(200)),
-        ),),
-          Padding(padding: const EdgeInsets.only(left: 18.0, top: 20, right: 18),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell()
-    ],
-          )
+      body:
 
-    )
+    //Row(mainAxisAlignment: MainAxisAlignment.start,
+     // children: [
+        Stack(
+              children: [
+            Container(
+                height: 80, width: 140,
+                decoration: BoxDecoration(
+                    color: AppColors.primaryColor.withOpacity(0.8),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(200),
+                      bottomRight: Radius.circular(200),))
+            ),
+            Container(
+              height: 140,
+              width: 80,
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor.withOpacity(0.8),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(200),
+                    bottomRight: Radius.circular(200)),
+              ),),
+                InkWell(
 
-
-
-      ],)
-
-
-    );
-
+                )
+          ],),
+   );
   }
 }
