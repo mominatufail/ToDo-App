@@ -30,7 +30,15 @@ class ContainerClass extends StatelessWidget {
                     topRight: Radius.circular(200),
                     bottomRight: Radius.circular(200)),
               ),),
+                Padding(padding: const EdgeInsets.only(left: 18.0,top: 200),
+                child:
                 InkWell(
+                  onTap: (){
+                    Navigator.pop(context);
+                  },
+                  child: ImageIcon(
+                    AssetImage()
+                  ),
 
                 )
           ],),
