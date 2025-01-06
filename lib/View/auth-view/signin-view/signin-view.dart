@@ -36,7 +36,7 @@ import '../signup-view/signup-view.dart';
        ContainerClass(),
        BlackTextHeading(text: 'Welcome Back!'),
        SizedBox(height: 8,),
-       Image.asset('Assets/loginimg.png',height: 226,width: 211,),
+       Image.asset('Assets/loginimg.png',height: 220,width: 211,),
        SizedBox(height: 8,),
        TextFormFieldWidget(hintText:    'Enter your Email Address', controller:emailController,),
        SizedBox(height: 5,),
@@ -54,11 +54,11 @@ import '../signup-view/signup-view.dart';
            print('Error'+value.toString());
          });
        }),
-       SizedBox(height: 10,),
+       SizedBox(height: 05,),
        Row(mainAxisAlignment: MainAxisAlignment.center,
            children: [
              NormalTextWidget(text: 'Don\'t have an Account ?', textColor:AppColors.primaryColor),
-             SizedBox(width: 5,),
+             SizedBox(width:5,),
              InkWell(
                  onTap: (){
                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignupView()));
