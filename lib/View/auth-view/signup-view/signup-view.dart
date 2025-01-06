@@ -11,6 +11,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../Controller/widgets/pass-field-widget.dart';
+import '../../../container.dart';
+import '../../starting-view/home-view/home-view.dart';
+
 class SignupView extends StatefulWidget {
   SignupView({super.key});
 
@@ -29,61 +33,46 @@ class _SignupViewState extends State<SignupView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: [
-        SizedBox(height: 30,),
+    return Scaffold(backgroundColor: AppColors.backGroundColor,
+      body: Column(children: [ContainerClass(),
         BlackTextHeading(text: 'Welcome Onboard!'),
-        SizedBox(height: 20,),
-        NormalTextWidget(text: 'Let’s help you meet up your task',textColor: AppColors.primaryColor,),
-        //TextFormFieldWidget(hintText: 'Enter your Full Name', controller:fullNameController),
-        TextFormFieldWidget(hintText: 'Enter your Email address ', controller:emailController),
-        TextFormFieldWidget(hintText: 'Create a Password', controller:passwordController),
-        //TextFormFieldWidget(hintText: 'Confirm your Password', controller:fullNameController),
-         SizedBox(height: 10,),
-
-        isloading?AppLoader():ButtonWidget(
-            text: 'SignUp',
-            ontap: () async {
-              isloading = true;
-              setState(() {});
-
-
-              await FirebaseAuth.instance.
-              createUserWithEmailAndPassword(
-                  email: emailController.text.trim(),
-                  password: passwordController.text).then((value) {
-                isloading = false;
-                setState(() {});
-                Navigator.push(context, CupertinoPageRoute(
-                    builder: (context) => LoginView()));
-              }).onError((value, error) {
-                isloading = false;
-                setState(() {});
-                Get.snackbar('Error','${value.toString()}',
-                backgroundColor: AppColors.primaryColor);
-
-              });
-
-
-            }),
-
-        SizedBox(height: 10),
-
+        SizedBox(height: 35,),
+        NormalTextWidget(text: 'Let’s help you meet up your task', textColor: AppColors.primaryColor,),
+        SizedBox(height: 35,),
+        TextFormFieldWidget(hintText:    'Enter your Full Name', controller:fullNameController),
+        SizedBox(height: 8,),
+        TextFormFieldWidget(hintText:   'Enter your Email address ', controller:emailController),
+        SizedBox(height: 8,),
+        PasswordField(hintText: 'Enter your password', controller: passwordController),
+        SizedBox(height: 8,),
+        //TextFormFieldWidget(hintText: 'Confirm your Password', controller:ConfirmPassController),
+        SizedBox(height: 8,),
+        SizedBox(height: 80,),
+        isloading?AppLoader():ButtonWidget(text: 'Sign Up', ontap: ()async { isloading =true;
+        setState((){});
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim()).then((value){isloading =false;setState(() {
+        });Navigator.push(context, CupertinoPageRoute(builder: (context)=>HomeView()));
+        }).onError((value,error){
+          isloading =false;setState(() {
+          });Get.snackbar('Error','${value.toString()}',backgroundColor: AppColors.primaryColor);
+          // print('Error'+'${value.toString()}');
+        });
+        }),
+        SizedBox(height: 10,),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          NormalTextWidget(text: 'Already have an account?', textColor: AppColors.blackColor),
-          SizedBox(width: 5,),
-          InkWell(
-            onTap: (){
-
-            },
-            child:
-            NormalTextWidget(text: 'Sign In', textColor: AppColors.primaryColor)
-          ),]
-
-    ),
-
-        ],),);
+              NormalTextWidget(text: 'Already have an account?', textColor:AppColors.primaryColor),
+              SizedBox(width: 5,),
+              InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginView()));
+                  },
+                  child: NormalTextWidget(text: 'Sign in',textColor:AppColors.blackColor ,))
+            ]
+        ),
+      ],),);
   }
 }
