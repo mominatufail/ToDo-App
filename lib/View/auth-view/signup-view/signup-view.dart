@@ -44,9 +44,7 @@ class _SignupViewState extends State<SignupView> {
         TextFormFieldWidget(hintText:   'Enter your Email address ', controller:emailController),
         SizedBox(height: 8,),
         PasswordField(hintText: 'Enter your password', controller: passwordController),
-        SizedBox(height: 8,),
         //TextFormFieldWidget(hintText: 'Confirm your Password', controller:ConfirmPassController),
-        SizedBox(height: 8,),
         SizedBox(height: 8,),
         isloading?AppLoader():ButtonWidget(text: 'Sign Up', ontap: ()async { isloading =true;
         setState((){});

@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
               children:[Column(
                 children: [
                   Container(
-                    height: 120,
+                    height: 200,
                     width:double.infinity,
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
