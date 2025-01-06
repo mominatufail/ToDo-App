@@ -3,7 +3,7 @@ class AppImages{
 
   String loginImg= 'assets/loginimg.png';
 
-  String backArrow= 'assets/BackArrow.png';
+  //String backArrow= 'assets/BackArrow.png';
   // String appLogoImg= 'assets/loginimg.png';
 }
 
