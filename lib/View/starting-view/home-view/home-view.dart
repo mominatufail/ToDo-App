@@ -21,8 +21,8 @@ class HomeView extends StatelessWidget {
               children:[Column(
                 children: [
                   Container(
-                    height: 220,
-                    width:510,
+                    height: 120,
+                    width:double.infinity,
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CircleAvatar(backgroundImage: AssetImage('assets/girl3.jpeg'),radius: 50,),
@@ -39,13 +39,13 @@ class HomeView extends StatelessWidget {
               ]
           ),
           SizedBox(height: 8,),
-          Image.asset('assets/5th.png',height: 246,width: 222,),
+          Image.asset('assets/5th.jpg',height: 246,width: 222,),
           Container(child: Padding(
             padding: const EdgeInsets.all(6.0),
             child: Column(
               children: [
                 Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children: [
-                  BlackTextHeading(text: 'Todo  Tasks'),IconButton(onPressed: (){
+                  BlackTextHeading(text: 'ToDo  Tasks'),IconButton(onPressed: (){
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>NewDataEntry()));
                   }, icon:

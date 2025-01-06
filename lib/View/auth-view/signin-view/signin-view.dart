@@ -36,12 +36,12 @@ import '../signup-view/signup-view.dart';
        ContainerClass(),
        BlackTextHeading(text: 'Welcome Back!'),
        SizedBox(height: 8,),
-       Image.asset('assets/3rd.png',height: 226,width: 211,),
-       SizedBox(height: 10,),
+       Image.asset('Assets/loginimg.png',height: 226,width: 211,),
+       SizedBox(height: 8,),
        TextFormFieldWidget(hintText:    'Enter your Email Address', controller:emailController,),
        SizedBox(height: 5,),
        PasswordField(hintText: 'Enter your password', controller: passwordController),
-       SizedBox(height: 20,),
+       SizedBox(height: 5,),
        isLoading?AppLoader():ButtonWidget(text: 'Sign In', ontap: ()async{
          isLoading =true;setState(() {
          });

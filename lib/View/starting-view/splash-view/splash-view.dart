@@ -26,11 +26,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(backgroundColor: AppColors.backGroundColor,
       body: Column(children: [ContainerClass(),
         Image.asset('assets/splashimg.png'),//height: 254,width: 354),
-        SizedBox(height: 30,),
+        SizedBox(height: 12,),
         BlackTextHeading(text: 'Get Things Done With Todo App'),
-        SizedBox(height: 15,),
-        NormalTextWidget(text: "Welcome to Todo App! Organize tasks, \n"
-            "set priorities,and stay on track effortlessly.\n "
+        SizedBox(height: 12,),
+        NormalTextWidget(text: "Welcome to the ToDo App! Easily organize your \n"
+            "tasks set priorities,and stay on top of your Goals, \n "
             "Let’s get started!",
           textColor: AppColors.primaryColor,),
         SizedBox(height: 10,),

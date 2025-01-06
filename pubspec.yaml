@@ -68,6 +68,7 @@ flutter:
   assets:
     - Assets/5th.jpg
     - Assets/splashimg.png
+    - Assets/loginimg.png
 
 
   
