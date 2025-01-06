@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
                     width:double.infinity,
                     child: Column(mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CircleAvatar(backgroundImage: AssetImage('assets/girl3.jpeg'),radius: 50,),
+                        CircleAvatar(backgroundImage: AssetImage('Assets/profile.jpg'),radius: 50,),
                         SizedBox(height: 20,),
                         BlackTextHeading(text: 'Welcome Back!'),
                       ],
