@@ -1,4 +1,7 @@
 import 'package:architecture/Controller/widgets/blacktext-heading-widget.dart';
+import 'package:architecture/View/starting-view/home-view/NewData-View/newdata-entry.dart';
+import 'package:architecture/View/starting-view/home-view/NewData-View/update-view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
