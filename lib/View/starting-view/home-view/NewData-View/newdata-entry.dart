@@ -52,7 +52,7 @@ class _NewDataEntryState extends State<NewDataEntry> {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: AppColors.backGroundColor,
       body: Column(children: [ContainerClass(),SizedBox(height: 5,),
-        Image.asset('assets/4rth.png',height: 172,width: 243,),
+        Image.asset('Assets/4th.jpg',height: 170,width: 243,),
         SizedBox(height: 40,),
         BlackTextHeading(text: 'Add What You Want To Do Later On', ),
         SizedBox(height: 20,),
