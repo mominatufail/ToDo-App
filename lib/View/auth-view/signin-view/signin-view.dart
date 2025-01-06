@@ -30,29 +30,44 @@ import '../signup-view/signup-view.dart';
 
    @override
    Widget build(BuildContext context) {
-     return Scaffold(backgroundColor: AppColors.backGroundColor,
-       body: Column(children: [ContainerClass(),
-         Image.asset('assets/1st.png',height: 254,width: 354,),
-         SizedBox(height: 30,),
-         BlackTextHeading(text: 'Get Things Done With Todo App'),
-         SizedBox(height: 15,),
-         NormalTextWidget(text: "Welcome to Todo App! Organize tasks, \n"
-             "set priorities,and stay on track effortlessly.\n "
-             "Let’s get started!",
-           textColor: AppColors.primaryColor,),
-         SizedBox(height: 20,),
-         AppLoader(),
-         SizedBox(height: 10,),
-         ButtonWidget(text: 'Get Started', ontap: () async {
-           User? check= await FirebaseAuth.instance.currentUser;
-           if(check==null){Navigator.push(context,
-               MaterialPageRoute(builder: (context)=>SignupView()));
-           }
-           else{
-             Navigator.push(context,
-                 MaterialPageRoute(builder: (context)=>HomeView()));}
-         }),        ],
-       ),
+     return Scaffold(backgroundColor: AppColors.backGroundColor,body:
+     Center(child: Column(children: [Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
+     ],),
+       ContainerClass(),
+       BlackTextHeading(text: 'Welcome Back!'),
+       SizedBox(height: 8,),
+       Image.asset('assets/3rd.png',height: 226,width: 211,),
+       SizedBox(height: 10,),
+       TextFormFieldWidget(hintText:    'Enter your Email Address', controller:emailController,),
+       SizedBox(height: 5,),
+       PasswordField(hintText: 'Enter your password', controller: passwordController),
+       SizedBox(height: 20,),
+       isLoading?AppLoader():ButtonWidget(text: 'Sign In', ontap: ()async{
+         isLoading =true;setState(() {
+         });
+         await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(),
+             password:passwordController.text.trim()).then((onValue){
+           Navigator.push(context, CupertinoPageRoute(builder: (context)=> HomeView()));
+         }).onError((value,error){
+           isLoading =false;setState(() {
+           });Get.snackbar('Error','${value.toString()}',backgroundColor: AppColors.primaryColor);
+           print('Error'+value.toString());
+         });
+       }),
+       SizedBox(height: 10,),
+       Row(mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             NormalTextWidget(text: 'Don\'t have an Account ?', textColor:AppColors.primaryColor),
+             SizedBox(width: 5,),
+             InkWell(
+                 onTap: (){
+                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignupView()));
+                 },
+                 child: NormalTextWidget(text: 'Sign Up',textColor:AppColors.blackColor ,)),
+           ]),
+     ],
+     )),
      );
    }
  }
+

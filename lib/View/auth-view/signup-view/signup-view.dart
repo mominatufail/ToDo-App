@@ -47,7 +47,7 @@ class _SignupViewState extends State<SignupView> {
         SizedBox(height: 8,),
         //TextFormFieldWidget(hintText: 'Confirm your Password', controller:ConfirmPassController),
         SizedBox(height: 8,),
-        SizedBox(height: 80,),
+        SizedBox(height: 8,),
         isloading?AppLoader():ButtonWidget(text: 'Sign Up', ontap: ()async { isloading =true;
         setState((){});
         await FirebaseAuth.instance.createUserWithEmailAndPassword(

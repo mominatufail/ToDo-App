@@ -1,7 +1,7 @@
 class AppImages{
-  static String splashImg='assets/splashimg.png';
+  static String splashImg='Assets/splashimg.png';
 
-  String loginImg= 'assets/loginimg.png';
+  String loginImg= 'Assets/loginimg.png';
 
 
   //String backArrow= 'assets/BackArrow.png';
