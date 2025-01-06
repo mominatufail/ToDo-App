@@ -11,6 +11,7 @@ class AppLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SpinKitCircle(
       color: AppColors.primaryColor,
+      size: 40,
       //add color
     );
   }
