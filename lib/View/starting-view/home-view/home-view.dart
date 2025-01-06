@@ -45,7 +45,7 @@ class HomeView extends StatelessWidget {
             child: Column(
               children: [
                 Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children: [
-                  Center(child: BlackTextHeading(text: 'ToDo  Tasks')),IconButton(onPressed: (){
+                  BlackTextHeading(text: 'ToDo  Tasks'),IconButton(onPressed: (){
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context)=>NewDataEntry()));
                   }, icon:
