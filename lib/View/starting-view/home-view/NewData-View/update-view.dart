@@ -53,7 +53,7 @@ class _UpdateDataEntryState extends State<UpdateDataEntry> {
         children: [
           ContainerClass(),
           SizedBox(height: 5),
-          Image.asset('assets/4rth.png', height: 172, width: 243),
+          Image.asset('Assets/4th.jpg', height: 172, width: 243),
           SizedBox(height: 40),
           BlackTextHeading(text: 'Update Your Task'),
           SizedBox(height: 20),
