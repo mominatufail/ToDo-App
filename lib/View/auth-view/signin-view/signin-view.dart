@@ -31,41 +31,43 @@ import '../signup-view/signup-view.dart';
    @override
    Widget build(BuildContext context) {
      return Scaffold(backgroundColor: AppColors.backGroundColor,body:
-     Center(child: Column(children: [Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
-     ],),
-       ContainerClass(),
-       BlackTextHeading(text: 'Welcome Back!'),
-       SizedBox(height: 8,),
-       Image.asset('Assets/loginimg.png',height: 220,width: 211,),
-       SizedBox(height: 8,),
-       TextFormFieldWidget(hintText:    'Enter your Email Address', controller:emailController,),
-       SizedBox(height: 5,),
-       PasswordField(hintText: 'Enter your password', controller: passwordController),
-       SizedBox(height: 5,),
-       isLoading?AppLoader():ButtonWidget(text: 'Sign In', ontap: ()async{
-         isLoading =true;setState(() {
-         });
-         await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(),
-             password:passwordController.text.trim()).then((onValue){
-           Navigator.push(context, CupertinoPageRoute(builder: (context)=> HomeView()));
-         }).onError((value,error){
-           isLoading =false;setState(() {
-           });Get.snackbar('Error','${value.toString()}',backgroundColor: AppColors.primaryColor);
-           print('Error'+value.toString());
-         });
-       }),
-       SizedBox(height: 05,),
-       Row(mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             NormalTextWidget(text: 'Don\'t have an Account ?', textColor:AppColors.primaryColor),
-             SizedBox(width:5,),
-             InkWell(
-                 onTap: (){
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignupView()));
-                 },
-                 child: NormalTextWidget(text: 'Sign Up',textColor:AppColors.blackColor ,)),
-           ]),
-     ],
+     Center(child: SingleChildScrollView(
+       child: Column(children: [Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,children: [
+       ],),
+         ContainerClass(),
+         BlackTextHeading(text: 'Welcome Back!'),
+         SizedBox(height: 8,),
+         Image.asset('Assets/loginimg.png',height: 220,width: 211,),
+         SizedBox(height: 8,),
+         TextFormFieldWidget(hintText:    'Enter your Email Address', controller:emailController,),
+         SizedBox(height: 5,),
+         PasswordField(hintText: 'Enter your password', controller: passwordController),
+         SizedBox(height: 5,),
+         isLoading?AppLoader():ButtonWidget(text: 'Sign In', ontap: ()async{
+           isLoading =true;setState(() {
+           });
+           await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text.trim(),
+               password:passwordController.text.trim()).then((onValue){
+             Navigator.push(context, CupertinoPageRoute(builder: (context)=> HomeView()));
+           }).onError((value,error){
+             isLoading =false;setState(() {
+             });Get.snackbar('Error','${value.toString()}',backgroundColor: AppColors.primaryColor);
+             print('Error'+value.toString());
+           });
+         }),
+         SizedBox(height: 05,),
+         Row(mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               NormalTextWidget(text: 'Don\'t have an Account ?', textColor:AppColors.primaryColor),
+               SizedBox(width:5,),
+               InkWell(
+                   onTap: (){
+                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>SignupView()));
+                   },
+                   child: NormalTextWidget(text: 'Sign Up',textColor:AppColors.blackColor ,)),
+             ]),
+       ],
+       ),
      )),
      );
    }

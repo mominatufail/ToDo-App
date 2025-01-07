@@ -37,50 +37,52 @@ class _UpdateDataEntryState extends State<UpdateDataEntry> {
       });
 
       isloading = false;
-      setState(() {});
-      Navigator.pop(context);
-    } catch (e) {
-      isloading = false;
-      setState(() {});
-      Get.snackbar('Error', '${e.toString()}');
-    }
-  }
-  @override
+  setState(() {});
+  Navigator.pop(context);
+} catch (e) {
+isloading = false;
+setState(() {});
+Get.snackbar('Error', '${e.toString()}');
+}
+}
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backGroundColor,
-      body:  Column(
-        children: [
-          ContainerClass(),
-          SizedBox(height: 5),
-          Image.asset('Assets/4th.jpg', height: 172, width: 243),
-          SizedBox(height: 40),
-          BlackTextHeading(text: 'Update Your Task'),
-          SizedBox(height: 20),
-          NormalTextWidget(
-            text: 'Modify the details as per your choice',
-            textColor: AppColors.primaryColor,
-          ),
-          SizedBox(height: 20),
-          TextFormFieldWidget(
-            hintText: 'Enter Name of your Task',
-            controller: TitleController,
-          ),
-          SizedBox(height: 10),
-          TextFormFieldWidget(
-            hintText: 'Add Description',
-            controller: DescriptionController,
-          ),
-          SizedBox(height: 20),
-          isloading
-              ? AppLoader()
-              : ButtonWidget(
-            text: 'Update Task',
-            ontap: () {
-              updatedata();
-            },
-          ),
-        ],
+      body:  SingleChildScrollView(
+        child: Column(
+          children: [
+            ContainerClass(),
+            SizedBox(height: 5),
+            Image.asset('Assets/4th.jpg', height: 172, width: 243),
+            SizedBox(height: 40),
+            BlackTextHeading(text: 'Update Your Task'),
+            SizedBox(height: 20),
+            NormalTextWidget(
+              text: 'Modify the details as per your choice',
+              textColor: AppColors.primaryColor,
+            ),
+            SizedBox(height: 20),
+            TextFormFieldWidget(
+              hintText: 'Enter Name of your Task',
+              controller: TitleController,
+            ),
+            SizedBox(height: 10),
+            TextFormFieldWidget(
+              hintText: 'Add Description',
+              controller: DescriptionController,
+            ),
+            SizedBox(height: 20),
+            isloading
+                ? AppLoader()
+                : ButtonWidget(
+              text: 'Update Task',
+              ontap: () {
+                updatedata();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

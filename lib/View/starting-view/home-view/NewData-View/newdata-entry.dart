@@ -51,20 +51,22 @@ class _NewDataEntryState extends State<NewDataEntry> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: AppColors.backGroundColor,
-      body: Column(children: [ContainerClass(),//SizedBox(height: 5,),
-        Image.asset('Assets/4th.jpg',height: 170,width: 243,),
-        SizedBox(height: 20,),
-        BlackTextHeading(text: 'Add What You Want To Do Later On', ),
-        SizedBox(height: 15,),
-        NormalTextWidget(text: 'and Add description of your choice', textColor: AppColors.primaryColor),
-        SizedBox(height: 15,),
-        TextFormFieldWidget(hintText: 'Enter Name of your Task', controller:TitleController ),
-        SizedBox(height: 10,),
-        TextFormFieldWidget(hintText: 'Add Description', controller:DescriptionController ),
-        SizedBox(height: 20,),
-        isloading==true?AppLoader(): ButtonWidget(text: 'Add To List', ontap: (){ insertdata();
-        }),
-      ],
+      body: SingleChildScrollView(
+        child: Column(children: [ContainerClass(),//SizedBox(height: 5,),
+          Image.asset('Assets/4th.jpg',height: 170,width: 243,),
+          SizedBox(height: 20,),
+          BlackTextHeading(text: 'Add What You Want To Do Later On', ),
+          SizedBox(height: 15,),
+          NormalTextWidget(text: 'and Add description of your choice', textColor: AppColors.primaryColor),
+          SizedBox(height: 15,),
+          TextFormFieldWidget(hintText: 'Enter Name of your Task', controller:TitleController ),
+          SizedBox(height: 10,),
+          TextFormFieldWidget(hintText: 'Add Description', controller:DescriptionController ),
+          SizedBox(height: 20,),
+          isloading==true?AppLoader(): ButtonWidget(text: 'Add To List', ontap: (){ insertdata();
+          }),
+        ],
+        ),
       ),
     );
   }

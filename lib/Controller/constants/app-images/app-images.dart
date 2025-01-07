@@ -4,6 +4,7 @@ class AppImages{
   String loginImg= 'Assets/loginimg.png';
 
 
+
   //String backArrow= 'assets/BackArrow.png';
   // String appLogoImg= 'assets/loginimg.png';
 }
